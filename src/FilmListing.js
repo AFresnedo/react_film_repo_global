@@ -5,7 +5,8 @@ export default class FilmDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: 'all'
+      filter: 'all',
+      faves: []
     };
   }
 
@@ -15,6 +16,12 @@ export default class FilmDetails extends Component {
     });
     console.log('setting filter to', filter);
   }
+
+  handleFaveToggle = (film) => {
+    const faves = this.state.faves.slice();
+    const filmIndex = faves.indexOf(film);
+  }
+
   render() {
     const allFilms = this.props.films.map( film => {
       return (
