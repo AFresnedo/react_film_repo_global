@@ -5,9 +5,9 @@ export default class Fave extends Component {
 handleClick(e) {
   e.stopPropagation();
   console.log('Handling Fave click!');
-
-  this.props.onFaveToggle();
+  // this.props.onFaveToggle();
 }
+
   render() {
     return (
       <div className={this.props.isFave ? 'film-row-fave remove_from_queue' :

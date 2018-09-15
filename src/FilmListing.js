@@ -20,6 +20,16 @@ export default class FilmDetails extends Component {
   handleFaveToggle = (film) => {
     const faves = this.state.faves.slice();
     const filmIndex = faves.indexOf(film);
+    // if it is not favorited, add it
+    if (filmIndex === -1) {
+      console.log('adding fav:', film);
+      faves.splice(filmIndex);
+    }
+    // else it is favorited and should be removed
+    else {
+      console.log('removing fav:', film);
+      faves.push(film);
+    }
   }
 
   render() {
